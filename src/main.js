@@ -2,7 +2,9 @@
 Name: Cromwell De Guzman
 Title: Rocket Patrol 2 (working title)
 Completed: TBA
-Mods: TBA
+Mods:
+- Track a high score that persists across scenes and display it in the UI (5)
+
 Citations: TBA
 */
 
