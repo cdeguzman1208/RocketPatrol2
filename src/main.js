@@ -1,3 +1,11 @@
+/*
+Name: Cromwell De Guzman
+Title: Rocket Patrol 2 (working title)
+Completed: TBA
+Mods: TBA
+Citations: TBA
+*/
+
 let config  = {
     type: Phaser.CANVAS,
     width: 640,
