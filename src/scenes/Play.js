@@ -69,12 +69,34 @@ class Play extends Phaser.Scene {
         }
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
 
+        // display highscore
+        let highscoreConfig = {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100
+        }
+        this.scoreRight = this.add.text(borderUISize + borderPadding * 43.5, borderUISize + borderPadding*2, highscore, highscoreConfig);
+
         // GAME OVER flag
         this.gameOver = false;
 
         // 60-second play clock
         scoreConfig.fixedWidth = 0;
+
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
+
+            if(this.p1Score > highscore) {
+                highscore = this.p1Score;
+            }
+            this.scoreRight.text = highscore;
+            
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
