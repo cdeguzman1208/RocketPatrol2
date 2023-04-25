@@ -8,7 +8,6 @@ class Spaceship extends Phaser.GameObjects.Sprite {
     }
 
     update() {
-        console.log(this.x + 'UPDATE')
         if (this.flipX == false) {
             // move spaceship left
             this.x -= this.moveSpeed;
@@ -38,6 +37,5 @@ class Spaceship extends Phaser.GameObjects.Sprite {
             this.x = 0 - this.width;
             this.flipX = false;
         }
-        console.log(randomNum + ' RESET');
     }
 }

@@ -117,7 +117,6 @@ class Play extends Phaser.Scene {
             this.scene.start("menuScene");
         }
 
-        /*
         // display FIRE
         let FIREConfig = {
             fontFamily: 'Courier',
@@ -129,12 +128,12 @@ class Play extends Phaser.Scene {
                 bottom: 5,
             },
             fixedWidth: 100,
-
+            visible: false,
         }
-        if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.FIRE = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*20, 'FIRE', FIREConfig);
+        let textFIRE = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*20, 'FIRE', FIREConfig);
+        if (this.p1Rocket.isFiring) {
+            textFIRE.visible = true;
         }
-        */
        
         this.starfield.tilePositionX -= 4; // update tile sprite
         if (!this.gameOver) {

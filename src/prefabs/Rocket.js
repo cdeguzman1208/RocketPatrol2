@@ -36,6 +36,7 @@ class Rocket extends Phaser.GameObjects.Sprite {
         if(this.y <= borderUISize * 3 + borderPadding) {
             this.reset();
         }
+        
     }
 
     // reset rocket to "ground"
