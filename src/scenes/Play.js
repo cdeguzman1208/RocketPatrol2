@@ -16,9 +16,14 @@ class Play extends Phaser.Scene {
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('bgm', './assets/blip_select12.wav');
     }
 
-    create() {
+    create() {        
+        // play bgm
+        let music = this.sound.add("bgm", { loop: true });
+        music.play();
+
         // tile sprite background
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
 
@@ -111,6 +116,26 @@ class Play extends Phaser.Scene {
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.scene.start("menuScene");
         }
+
+        /*
+        // display FIRE
+        let FIREConfig = {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            color: 'white',
+            align: 'center',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100,
+
+        }
+        if (Phaser.Input.Keyboard.JustDown(keyF)) {
+            this.FIRE = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*20, 'FIRE', FIREConfig);
+        }
+        */
+
         this.starfield.tilePositionX -= 4; // update tile sprite
         if (!this.gameOver) {
             this.p1Rocket.update(); // update p1
