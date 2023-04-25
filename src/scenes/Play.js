@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
         // load images/tile sprites
         this.load.image('rocket', './assets/rocket.png');
         this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('starfield', './assets/starfield.png');
+        this.load.image('starfield', './assets/starfield2.png');
 
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
@@ -135,7 +135,7 @@ class Play extends Phaser.Scene {
             this.FIRE = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*20, 'FIRE', FIREConfig);
         }
         */
-
+       
         this.starfield.tilePositionX -= 4; // update tile sprite
         if (!this.gameOver) {
             this.p1Rocket.update(); // update p1
