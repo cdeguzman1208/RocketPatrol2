@@ -7,7 +7,7 @@ Mods:
 x Implement the 'FIRE' UI text from the original game (5)
 - Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)
 x Implement the speed increase that happens after 30 seconds in the original game (5)
-x Randomize each spaceship's movement direction at the start of each play (5)
+- Randomize each spaceship's movement direction at the start of each play (5)
 - Create a new scrolling tile sprite for the background (5)
 x Create 4 new explosion sound effects and randomize which one plays on impact (10)
 x Display the time remaining (in seconds) on the screen (10)
