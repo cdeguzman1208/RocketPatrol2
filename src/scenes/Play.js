@@ -19,7 +19,7 @@ class Play extends Phaser.Scene {
         this.load.audio('bgm', './assets/blip_select12.wav');
     }
 
-    create() {        
+    create() {
         // play bgm
         let music = this.sound.add("bgm", { loop: true });
         music.play();
@@ -145,7 +145,7 @@ class Play extends Phaser.Scene {
         }
 
         // check collisions
-        if(this.checkCollision(this.p1Rocket, this.ship03)) {
+        if (this.checkCollision(this.p1Rocket, this.ship03)) {
             // console.log('kaboom ship 03');
             this.p1Rocket.reset();
             // this.ship03.reset();
