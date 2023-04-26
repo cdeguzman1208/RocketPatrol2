@@ -142,7 +142,7 @@ class Play extends Phaser.Scene {
             fixedWidth: 100,
             visible: false,
         }
-        let textFIRE = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*20, 'FIRE', FIREConfig);
+        let textFIRE = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*20, 'HOP', FIREConfig);
         if (this.p1Rocket.isFiring) {
             textFIRE.visible = true;
             setTimeout(() => {
