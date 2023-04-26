@@ -17,6 +17,11 @@ class Play extends Phaser.Scene {
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
         this.load.audio('bgm', './assets/blip_select12.wav');
+        this.load.audio('sfx_explosion1', './assets/explosion38.wav');
+        this.load.audio('sfx_explosion2', './assets/explosion38.wav');
+        this.load.audio('sfx_explosion3', './assets/explosion38.wav');
+        this.load.audio('sfx_explosion4', './assets/explosion38.wav');
+
     }
 
     create() {
@@ -232,6 +237,32 @@ class Play extends Phaser.Scene {
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
         
-        this.sound.play('sfx_explosion');
+        let randomExplosion = Math.floor(Math.random() * 4);
+        switch (randomExplosion) {
+            case 0:
+                // console.log(randomExplosion);
+                this.sound.play('sfx_explosion');
+                break;
+            case 1:
+                // console.log(randomExplosion);
+                this.sound.play('sfx_explosion1');
+                break;
+            case 2:
+                // console.log(randomExplosion);
+                this.sound.play('sfx_explosion2');
+                break;
+            case 3:
+                // console.log(randomExplosion);
+                this.sound.play('sfx_explosion3');
+                break;
+            case 4:
+                // console.log(randomExplosion);
+                this.sound.play('sfx_explosion4');
+                break;
+            default:
+                // console.log(randomExplosion);
+                this.sound.play('sfx_explosion');
+                break;
+        }
     }
 }
