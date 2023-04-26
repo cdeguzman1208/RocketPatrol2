@@ -26,7 +26,7 @@ class Spaceship extends Phaser.GameObjects.Sprite {
             }
         }
 
-        if (this.scene.time.now > 30000) {
+        if (this.scene.time.now > game.settings.gameTimer / 2) {
             this.moveSpeed = game.settings.spaceshipSpeed * 2;
         }
     }
