@@ -139,7 +139,30 @@ class Play extends Phaser.Scene {
         } else {
             textFIRE.visible = false;
         }
-       
+
+        // show countdown timer
+        let timerConfig = {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            color: 'red',
+            align: 'center',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100,
+            visible: false,
+        }
+        let countdownTimer = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*2.25, Math.floor(this.clock.getRemainingSeconds()), timerConfig);
+        if (!this.gameOver) {
+            countdownTimer.visible = true;
+            setTimeout(() => {
+                countdownTimer.visible = false;
+            }, 0);
+        } else {
+            countdownTimer.visible = false;
+        }
+
         this.starfield.tilePositionX -= 4; // update tile sprite
         if (!this.gameOver) {
             this.p1Rocket.update(); // update p1
