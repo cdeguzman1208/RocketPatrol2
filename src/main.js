@@ -15,7 +15,7 @@ Mods:
 - Create a new title screen (e.g., new artwork, typography, layout) (10)
 - Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)
 x Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15)
-+ go back and update assets accordingly
++ (go back and update assets accordingly)
 
 Citations:
 - Beatrice Yu (CMPM 120-01)
