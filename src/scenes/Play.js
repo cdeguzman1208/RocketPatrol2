@@ -133,6 +133,11 @@ class Play extends Phaser.Scene {
         let textFIRE = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*20, 'FIRE', FIREConfig);
         if (this.p1Rocket.isFiring) {
             textFIRE.visible = true;
+            setTimeout(() => {
+                textFIRE.visible = false;
+            }, 0);
+        } else {
+            textFIRE.visible = false;
         }
        
         this.starfield.tilePositionX -= 4; // update tile sprite
