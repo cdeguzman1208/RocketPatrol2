@@ -16,7 +16,7 @@ class Play extends Phaser.Scene {
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
-        this.load.audio('bgm', './assets/blip_select12.wav');
+        this.load.audio('bgm', './assets/RR bgm.wav');
         this.load.audio('sfx_explosion1', './assets/explosion38.wav');
         this.load.audio('sfx_explosion2', './assets/explosion38.wav');
         this.load.audio('sfx_explosion3', './assets/explosion38.wav');
@@ -26,7 +26,7 @@ class Play extends Phaser.Scene {
 
     create() {
         // play bgm
-        let music = this.sound.add("bgm", { loop: true });
+        let music = this.sound.add("bgm", { loop: true, volume: 25 });
         music.play();
 
         // tile sprite background
@@ -111,6 +111,7 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
+            music.stop();
         }, null, this);
     }
 
