@@ -26,8 +26,8 @@ class Play extends Phaser.Scene {
 
     create() {
         // play bgm
-        let music = this.sound.add("bgm", { loop: true, volume: 25 });
-        music.play();
+        this.music = this.sound.add("bgm", { loop: true, volume: 25 });
+        this.music.play();
 
         // tile sprite background
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
@@ -111,7 +111,7 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
-            music.stop();
+            this.music.stop();
         }, null, this);
     }
 
@@ -120,6 +120,7 @@ class Play extends Phaser.Scene {
         this.ship04.moveSpeed = this.game.settings.spaceshipSpeed * 2;
         if (this.time.now > this.game.settings.gameTimer / 2) {
             this.ship04.moveSpeed = this.game.settings.spaceshipSpeed * 4;
+            this.music.detune = 1200;
         }
 
         // check key input for restart
