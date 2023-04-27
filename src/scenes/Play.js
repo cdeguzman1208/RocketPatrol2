@@ -237,7 +237,7 @@ class Play extends Phaser.Scene {
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
         
-        let randomExplosion = Math.floor(Math.random() * 4);
+        let randomExplosion = Math.floor(Math.random() * 3);
         switch (randomExplosion) {
             case 0:
                 // console.log(randomExplosion);
@@ -255,13 +255,9 @@ class Play extends Phaser.Scene {
                 // console.log(randomExplosion);
                 this.sound.play('sfx_explosion3');
                 break;
-            case 4:
-                // console.log(randomExplosion);
-                this.sound.play('sfx_explosion4');
-                break;
             default:
                 // console.log(randomExplosion);
-                this.sound.play('sfx_explosion');
+                this.sound.play('sfx_explosion4');
                 break;
         }
     }

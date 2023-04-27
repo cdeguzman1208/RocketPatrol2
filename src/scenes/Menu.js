@@ -18,7 +18,7 @@ class Menu extends Phaser.Scene {
         // menu text configuration
         let menuConfig = {
             fontFamily: 'Comic Sans MS',
-            fontSize: '28px',
+            fontSize: '40px',
             backgroundColor: '#FF00FF',
             color: '#301934',
             align: 'right',
@@ -30,7 +30,8 @@ class Menu extends Phaser.Scene {
         }
 
         // show menu text
-        this.add.text(game.config.width/2, game.config.height/3 - borderUISize - borderPadding, 'RIBBET PATROL', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/3 - borderUISize - borderPadding, '🐸RIBBET PATROL🐸', menuConfig).setOrigin(0.5);
+        menuConfig.fontSize = '28px';
         this.add.text(game.config.width/2, game.config.height/2.4, 'Use ←→ arrows to move & (F) to hop', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#023020';
