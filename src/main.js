@@ -14,8 +14,8 @@ Mods:
 - Display the time remaining (in seconds) on the screen (10)
 > Using a texture atlas, create a new animated sprite for the Spaceship enemies (10)
 - Create a new title screen (e.g., new artwork, typography, layout) (10)
+> Implement parallax scrolling for the background (10)
 > Create a new enemy Spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (15)
-> Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15)
 
 Citations:
 - Beatrice Yu (CMPM 120-01)
