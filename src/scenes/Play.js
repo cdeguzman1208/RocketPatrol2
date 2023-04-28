@@ -8,9 +8,11 @@ class Play extends Phaser.Scene {
         this.load.image('rocket', './assets/rocket.png');
         this.load.image('spaceship', './assets/spaceship.png');
         this.load.image('starfield', './assets/starfield2.png');
+        this.load.image('bike', './assets/spr_bike2man_0.png');
 
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        this.load.spritesheet('car', './assets/spritesheet.png', {frameWidth: 59, frameHeight: 40, startFrame: 0, endFrame: 5});
 
         // load audio
         this.load.audio('sfx_select', './assets/blip_select12.wav');
@@ -34,6 +36,13 @@ class Play extends Phaser.Scene {
 
         // green UI background
         this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
+
+        // add spaceships (x3)
+        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'car', 0, 30).setOrigin(0, 0);
+        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'car', 0, 20).setOrigin(0,0);
+        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'car', 0, 10).setOrigin(0,0);
+        this.ship04 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*6 + borderPadding*3, 'bike', 0, 40).setOrigin(0,0);
+
         // white borders
         this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
         this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
@@ -49,18 +58,22 @@ class Play extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
-        // add spaceships (x3)
-        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'spaceship', 0, 30).setOrigin(0, 0);
-        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 20).setOrigin(0,0);
-        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
-        this.ship04 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*6 + borderPadding*3, 'rocket', 0, 40).setOrigin(0,0);
-
         // animation config
         this.anims.create({
             key: 'explode',
             frames: this.anims.generateFrameNumbers('explosion', { start: 0, end: 9, first: 0}),
             frameRate: 30
         });
+
+        this.anims.create({
+            key: 'drive',
+            frames: this.anims.generateFrameNumbers('car', { start: 0, end: 5, first: 0}),
+            frameRate: 2,
+            repeat: -1
+        });
+        this.ship01.play('drive');
+        this.ship02.play('drive');
+        this.ship03.play('drive');
 
         // initialize score
         this.p1Score = 0;

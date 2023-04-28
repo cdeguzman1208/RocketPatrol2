@@ -8,7 +8,7 @@ class Spaceship extends Phaser.GameObjects.Sprite {
     }
 
     update() {
-        if (this.flipX == false) {
+        if (this.flipX == true) {
             // move spaceship left
             this.x -= this.moveSpeed;
             
@@ -36,10 +36,10 @@ class Spaceship extends Phaser.GameObjects.Sprite {
         let randomNum = Math.floor(Math.random() * 5);
         if (randomNum >= 3) {
             this.x = game.config.width;
-            this.flipX = true;
+            this.flipX = false;
         } else {
             this.x = 0 - this.width;
-            this.flipX = false;
+            this.flipX = true;
         }
     }
 }
