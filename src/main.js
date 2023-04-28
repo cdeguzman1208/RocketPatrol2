@@ -21,6 +21,8 @@ Citations:
 - Beatrice Yu (CMPM 120-01)
 - Jentsen Maniti (CMPM 120-02)
 - Brad Gilbertson (https://brad-gilbertson.itch.io/16bit-race-car-set)
+- Chasersgaming (https://opengameart.org/content/2d-bike-sprite-2)
+- SwimmableBee912 (https://swimmablebee.itch.io/frogger-minijam)
 */
 
 let config  = {
