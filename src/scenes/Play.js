@@ -13,24 +13,24 @@ class Play extends Phaser.Scene {
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
         this.load.spritesheet('car', './assets/spritesheet.png', {frameWidth: 59, frameHeight: 40, startFrame: 0, endFrame: 5});
-        this.load.spritesheet('frog', './assets/SpritesSheet_Frogger.png', {frameWidth: 25, frameHeight: 30, startFrame: 4, endFrame: 4});
+        this.load.spritesheet('frog', './assets/smolblockboi_froggies_spritesheet.png', {frameWidth: 31.5, frameHeight: 31, startFrame: 9, endFrame: 9});
 
         // load audio
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
         this.load.audio('bgm', './assets/RR bgm.wav');
-        this.load.audio('sfx_explosion1', './assets/explosion38.wav'); // create 4 new explosion sfx
-        this.load.audio('sfx_explosion2', './assets/explosion38.wav');
-        this.load.audio('sfx_explosion3', './assets/explosion38.wav');
-        this.load.audio('sfx_explosion4', './assets/explosion38.wav');
+        this.load.audio('sfx_explosion1', './assets/sword-hit-7160.mp3'); // create 4 new explosion sfx
+        this.load.audio('sfx_explosion2', './assets/oh-no-113125.mp3');
+        this.load.audio('sfx_explosion3', './assets/oh-no-113125.mp3');
+        this.load.audio('sfx_explosion4', './assets/oh-no-113125.mp3');
 
     }
 
     create() {
         // play bgm
         this.music = this.sound.add("bgm", { loop: true, volume: 25 });
-        this.music.play();
+        // this.music.play();
 
         // tile sprite background
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
@@ -51,7 +51,7 @@ class Play extends Phaser.Scene {
         this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
 
         // add rocket (p1)
-        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'frog').setOrigin(0.5, 0);
+        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding - 20, 'frog').setOrigin(0.5, 0);
 
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -255,25 +255,25 @@ class Play extends Phaser.Scene {
         
         let randomExplosion = Math.floor(Math.random() * 3);
         switch (randomExplosion) {
-            case 0:
+            case 0: // boom
                 // console.log(randomExplosion);
                 this.sound.play('sfx_explosion');
                 break;
-            case 1:
+            case 1: // clang
                 // console.log(randomExplosion);
-                this.sound.play('sfx_explosion1');
+                this.sound.play('sfx_explosion1', {volume: 10});
                 break;
-            case 2:
+            case 2: // oh no!
                 // console.log(randomExplosion);
-                this.sound.play('sfx_explosion2');
+                this.sound.play('sfx_explosion2', {volume: 10, seek: 0.5});
                 break;
             case 3:
                 // console.log(randomExplosion);
-                this.sound.play('sfx_explosion3');
+                this.sound.play('sfx_explosion3', {volume: 10, seek: 0.5});
                 break;
             default:
                 // console.log(randomExplosion);
-                this.sound.play('sfx_explosion4');
+                this.sound.play('sfx_explosion4', {volume: 10, seek: 0.5});
                 break;
         }
     }
