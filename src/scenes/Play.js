@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
         // load images/tile sprites
         // this.load.image('rocket', './assets/rocket.png');
         // this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('starfield', './assets/starfield2.png');
+        this.load.image('starfield', './assets/starfield2.png'); // NEW parallax scrolling background
         this.load.image('bike', './assets/spr_bike2man_0.png');
 
         // load spritesheet
@@ -20,8 +20,7 @@ class Play extends Phaser.Scene {
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
         this.load.audio('bgm', './assets/RR bgm.wav');
-        //todo get more music =D
-        this.load.audio('sfx_explosion1', './assets/explosion38.wav');
+        this.load.audio('sfx_explosion1', './assets/explosion38.wav'); // create 4 new explosion sfx
         this.load.audio('sfx_explosion2', './assets/explosion38.wav');
         this.load.audio('sfx_explosion3', './assets/explosion38.wav');
         this.load.audio('sfx_explosion4', './assets/explosion38.wav');
