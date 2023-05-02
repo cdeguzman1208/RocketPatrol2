@@ -1,7 +1,7 @@
 /*
 Name: Cromwell De Guzman
 Title: Ribbet Patrol
-Completed: ~10 hours
+Completed: ~12 hours
 Mods:
 - Track a high score that persists across scenes and display it in the UI (5)
 - Implement the 'FIRE' UI text from the original game (5)
@@ -25,6 +25,8 @@ Citations:
 - smolblockboi (https://smolblockboi.itch.io/smol-froggies-sprites-pack)
 - qubodup (Sword Hit Sound Effect from Pixabay)
 - SergeQuadrado (Oh, No! Sound Effect from Pixabay)
+- 
+-
 */
 
 let config  = {

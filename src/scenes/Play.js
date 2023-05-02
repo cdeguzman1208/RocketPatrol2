@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
         // load images/tile sprites
         // this.load.image('rocket', './assets/rocket.png');
         // this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('starfield', './assets/starfield2.png'); // NEW parallax scrolling background
+        this.load.image('starfield', './assets/starfield.png'); // NEW parallax scrolling background
         this.load.image('bike', './assets/spr_bike2man_0.png');
 
         // load spritesheet
@@ -30,7 +30,7 @@ class Play extends Phaser.Scene {
     create() {
         // play bgm
         this.music = this.sound.add("bgm", { loop: true, volume: 25 });
-        // this.music.play();
+        this.music.play();
 
         // tile sprite background
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
