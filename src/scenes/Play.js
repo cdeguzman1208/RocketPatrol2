@@ -22,14 +22,14 @@ class Play extends Phaser.Scene {
         this.load.audio('bgm', './assets/RR bgm.wav');
         this.load.audio('sfx_explosion1', './assets/sword-hit-7160.mp3'); // create 4 new explosion sfx
         this.load.audio('sfx_explosion2', './assets/oh-no-113125.mp3');
-        this.load.audio('sfx_explosion3', './assets/oh-no-113125.mp3');
-        this.load.audio('sfx_explosion4', './assets/oh-no-113125.mp3');
+        this.load.audio('sfx_explosion3', './assets/explosion-sound.mp3');
+        this.load.audio('sfx_explosion4', './assets/explosion-sound-effect-free.mp3');
 
     }
 
     create() {
         // play bgm
-        this.music = this.sound.add("bgm", { loop: true, volume: 25 });
+        this.music = this.sound.add("bgm", { loop: true, volume: 5 });
         this.music.play();
 
         // tile sprite background
@@ -253,27 +253,27 @@ class Play extends Phaser.Scene {
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
         
-        let randomExplosion = Math.floor(Math.random() * 3);
+        let randomExplosion = Math.floor(Math.random() * 5);
         switch (randomExplosion) {
-            case 0: // boom
-                // console.log(randomExplosion);
+            case 0: // rocket patrol explosion
+                // console.log("rocket patrol explosion");
                 this.sound.play('sfx_explosion');
                 break;
             case 1: // clang
-                // console.log(randomExplosion);
+                // console.log("clang");
                 this.sound.play('sfx_explosion1', {volume: 10});
                 break;
             case 2: // oh no!
-                // console.log(randomExplosion);
-                this.sound.play('sfx_explosion2', {volume: 10, seek: 0.5});
+                // console.log("oh no!");
+                this.sound.play('sfx_explosion2', {seek: 0.5});
                 break;
-            case 3:
-                // console.log(randomExplosion);
-                this.sound.play('sfx_explosion3', {volume: 10, seek: 0.5});
+            case 3: // boom 1
+                // console.log("boom 1");
+                this.sound.play('sfx_explosion3');
                 break;
-            default:
-                // console.log(randomExplosion);
-                this.sound.play('sfx_explosion4', {volume: 10, seek: 0.5});
+            case 4: // boom 2
+                // console.log("boom 2");
+                this.sound.play('sfx_explosion4');
                 break;
         }
     }
