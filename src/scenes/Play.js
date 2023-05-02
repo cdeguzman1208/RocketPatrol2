@@ -7,13 +7,13 @@ class Play extends Phaser.Scene {
         // load images/tile sprites
         // this.load.image('rocket', './assets/rocket.png');
         // this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('starfield', './assets/road.png'); // NEW parallax scrolling background
+        this.load.image('starfield', './assets/road.png'); // NEW background
         this.load.image('bike', './assets/spr_bike2man_0.png');
 
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
         this.load.spritesheet('car', './assets/spritesheet.png', {frameWidth: 59, frameHeight: 40, startFrame: 0, endFrame: 5});
-        this.load.spritesheet('frog', './assets/smolblockboi_froggies_spritesheet.png', {frameWidth: 31.5, frameHeight: 31, startFrame: 9, endFrame: 9});
+        this.load.spritesheet('frog', './assets/smolblockboi_froggies_spritesheet.png', {frameWidth: 31.5, frameHeight: 31, startFrame: 8, endFrame: 8});
 
         // load audio
         this.load.audio('sfx_select', './assets/blip_select12.wav');
@@ -36,13 +36,13 @@ class Play extends Phaser.Scene {
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
 
         // green UI background
-        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
+        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2 - 10, 0x00FF00).setOrigin(0, 0);
 
         // add spaceships (x3)
-        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'car', 0, 30).setOrigin(0, 0);
-        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'car', 0, 20).setOrigin(0,0);
-        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'car', 0, 10).setOrigin(0,0);
-        this.ship04 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*6 + borderPadding*3, 'bike', 0, 40).setOrigin(0,0);
+        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4 + 50, 'car', 0, 30).setOrigin(0, 0);
+        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2 + 75, 'car', 0, 20).setOrigin(0,0);
+        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4 + 100, 'car', 0, 10).setOrigin(0,0);
+        this.ship04 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*6 + borderPadding*3 - 110, 'bike', 0, 40).setOrigin(0,0);
 
         // white borders
         this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
@@ -181,7 +181,7 @@ class Play extends Phaser.Scene {
             fixedWidth: 100,
             visible: false,
         }
-        let countdownTimer = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*2.25, Math.floor(this.clock.getRemainingSeconds()), timerConfig);
+        let countdownTimer = this.add.text(borderUISize + borderPadding * 23.5, borderUISize + borderPadding*2, Math.floor(this.clock.getRemainingSeconds()), timerConfig);
         if (!this.gameOver) {
             countdownTimer.visible = true;
             setTimeout(() => {

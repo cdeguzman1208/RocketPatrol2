@@ -8,7 +8,7 @@ Mods:
 - Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)
 - Implement the speed increase that happens after 30 seconds in the original game (5)
 - Randomize each spaceship's movement direction at the start of each play (5)
-> Create a new scrolling tile sprite for the background (5)
+- Create a new scrolling tile sprite for the background (5)
 - Allow the player to control the Rocket after it's fired (5)
 > Create 4 new explosion sound effects and randomize which one plays on impact (10)
 - Display the time remaining (in seconds) on the screen (10)
