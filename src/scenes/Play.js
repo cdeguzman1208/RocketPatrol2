@@ -262,7 +262,7 @@ class Play extends Phaser.Scene {
                 break;
             case 1: // clang
                 // console.log("clang");
-                this.sound.play('sfx_explosion1', {volume: 10});
+                this.sound.play('sfx_explosion1');
                 break;
             case 2: // oh no!
                 // console.log("oh no!");
