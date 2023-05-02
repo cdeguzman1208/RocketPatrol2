@@ -8,6 +8,7 @@ class Play extends Phaser.Scene {
         // this.load.image('rocket', './assets/rocket.png');
         // this.load.image('spaceship', './assets/spaceship.png');
         this.load.image('starfield', './assets/road.png'); // NEW background
+        this.load.image('rainbow', './assets/rainbow.png');
         this.load.image('bike', './assets/spr_bike2man_0.png');
 
         // load spritesheet
@@ -34,16 +35,17 @@ class Play extends Phaser.Scene {
         this.music.play();
 
         // tile sprite background
+        this.rainbows = this.add.tileSprite(0, 0, 640, 480, 'rainbow').setOrigin(0, 0);
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
 
         // green UI background
         this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2 - 10, 0x00FF00).setOrigin(0, 0);
 
         // add spaceships (x3)
-        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4 + 50, 'car', 0, 30).setOrigin(0, 0);
-        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2 + 75, 'car', 0, 20).setOrigin(0,0);
-        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4 + 100, 'car', 0, 10).setOrigin(0,0);
-        this.ship04 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*6 + borderPadding*3 - 110, 'bike', 0, 40).setOrigin(0,0);
+        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4 + 105, 'car', 0, 30).setOrigin(0, 0);
+        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2 + 115, 'car', 0, 20).setOrigin(0,0);
+        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4 + 125, 'car', 0, 10).setOrigin(0,0);
+        this.ship04 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*6 + borderPadding*3 - 50, 'bike', 0, 40).setOrigin(0,0);
 
         // white borders
         this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
@@ -193,6 +195,7 @@ class Play extends Phaser.Scene {
         }
 
         this.starfield.tilePositionX -= 4; // update tile sprite
+        this.rainbows.tilePositionX -= 1; // update tile sprite
         if (!this.gameOver) {
             this.p1Rocket.update(); // update p1
             this.ship01.update(); // update spaceships (x3)
