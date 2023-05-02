@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
         // load images/tile sprites
         // this.load.image('rocket', './assets/rocket.png');
         // this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('starfield', './assets/starfield.png'); // NEW parallax scrolling background
+        this.load.image('starfield', './assets/road.png'); // NEW parallax scrolling background
         this.load.image('bike', './assets/spr_bike2man_0.png');
 
         // load spritesheet
