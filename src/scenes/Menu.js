@@ -8,6 +8,7 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.image('swamp', './assets/vecteezy_cartoon-forest-pond-or-swamp-background-deep-wood_13717340.jpg')
     }
 
     create() {
@@ -28,6 +29,8 @@ class Menu extends Phaser.Scene {
             },
             fixedWidth: 0
         }
+
+        this.add.image(0, 0, 'swamp').setScale(0.6).setOrigin(0, 0);
 
         // show menu text
         this.add.text(game.config.width/2, game.config.height/3 - borderUISize - borderPadding, '🐸RIBBET PATROL🐸', menuConfig).setOrigin(0.5);

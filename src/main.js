@@ -27,6 +27,7 @@ Citations:
 - SergeQuadrado (Oh, No! Sound Effect from Pixabay: https://pixabay.com/sound-effects/oh-no-113125/)
 - Explosion Sound (Explosion Sound from Free Sounds Library: https://www.freesoundslibrary.com/explosion-sound/)
 - Spanac (Explosion Sound Effect Free from Free Sounds Library: https://www.freesoundslibrary.com/explosion-sound-effect-free/)
+- Yuliya Pauliukevich (cartoon forest pond or swamp background deep wood from vecteezy.com: https://www.vecteezy.com/vector-art/13717340-cartoon-forest-pond-or-swamp-background-deep-wood)
 */
 
 let config  = {
